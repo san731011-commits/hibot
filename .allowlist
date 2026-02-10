@@ -1,0 +1,17 @@
+# .allowlist - generated draft
+# 한 줄에 하나. 주석은 # 로 시작.
+# 허용되는 파일/디렉터리 경로 또는 정확한 명령 경로를 적으세요.
+
+# 읽기 허용
+/home/san/.openclaw/workspace/**
+/home/san/.openclaw/workspace/config/**
+/var/lib/docker/containers/**
+
+# 실행 허용 (정확한 실행 파일 경로)
+/usr/bin/docker
+/usr/bin/docker-compose
+/usr/bin/git
+/usr/bin/openclaw
+
+# 특이사항: 파괴적 명령(예: rm, mkfs)은 명시적 허가 없이는 허용하지 않음
+# 필요시 이 파일을 수정해서 실행 권한(정확한 경로)을 추가하세요.
