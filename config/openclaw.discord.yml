@@ -1,0 +1,13 @@
+# OpenClaw Discord channel listen config override
+channels:
+  discord:
+    guilds:
+      "1470397073923899463":
+        channels:
+          "1470397073923899463":
+            listenWithoutMention: true
+            allowFrom:
+              users: []
+            triggerPrefix: "" # empty means no prefix required
+# Security note: Make sure Message Content Intent is enabled in Discord Developer Portal.
+# Also consider adding allowed users or rate limits to avoid spam.
