@@ -2,12 +2,13 @@
 channels:
   discord:
     guilds:
-      "1470397073923899463":
+      "1469645949436690502":
         channels:
           "1470397073923899463":
             listenWithoutMention: true
             allowFrom:
-              users: []
+              users:
+                - 1122954940164354130
             triggerPrefix: "" # empty means no prefix required
 # Security note: Make sure Message Content Intent is enabled in Discord Developer Portal.
 # Also consider adding allowed users or rate limits to avoid spam.

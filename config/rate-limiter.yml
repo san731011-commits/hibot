@@ -1,0 +1,36 @@
+# Rate Limiter Configuration for OpenClaw
+# Optimized for speed while maintaining TPM limits
+
+rateLimiter:
+  enabled: true
+  
+  # Inbound debounce - reduced for faster response (ms)
+  debounceMs: 100
+  
+  # Response delay - minimized for faster response (ms)
+  responseDelay:
+    min: 50
+    max: 150
+  
+  # Queue settings - increased capacity
+  queue:
+    maxSize: 10
+    dropWhenFull: true
+  
+  # Token-based rate limiting (TPM - Tokens Per Minute)
+  # Kimi: 1,900,000 TPM | Others: 800,000 TPM
+  tokenLimit:
+    enabled: true
+    maxTokensPerMinute: 1900000  # Kimi limit (highest)
+    cooldownSeconds: 30
+    checkIntervalSeconds: 60
+
+# Channel-specific overrides (optional)
+channels:
+  "1470397073923899463":
+    debounceMs: 100
+    responseDelay:
+      min: 50
+      max: 150
+    queue:
+      maxSize: 10
