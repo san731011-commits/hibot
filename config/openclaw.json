@@ -141,7 +141,7 @@
       "token": "YOUR_GATEWAY_AUTH_TOKEN_HERE"
     },
     "tailscale": {
-      "mode": "off",
+      "mode": "on",
       "resetOnExit": false
     },
     "nodes": {
