@@ -5,3 +5,6 @@ vscode_cli.tar.gz
 # OS / editor
 .DS_Store
 Thumbs.db
+
+# Local SSH keys
+.ssh/
