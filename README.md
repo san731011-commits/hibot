@@ -61,6 +61,7 @@ export GITHUB_TOKEN="<fine-grained-pat>"
 4. HTTP Codex 브리지: `scripts/codex_http_bridge.py`
 5. HTTP 브리지 자동실행: `scripts/install_http_bridge_task.ps1`
 6. OpenClaw -> HTTP 명령 브리지: `scripts/openclaw_http_bridge.py`
+7. Discord slash sidecar 봇: `scripts/discord_codex_bridge_bot.py`
 
 문서:
 - `docs/worker-automation.md`
@@ -70,3 +71,4 @@ export GITHUB_TOKEN="<fine-grained-pat>"
 - `docs/http-bridge.md`
 - `docs/windows-http-bridge-task.md`
 - `docs/openclaw-http-commands.md`
+- `docs/discord-sidecar-bot.md`
