@@ -68,6 +68,7 @@ curl -sS "http://127.0.0.1:8787/health"
 - 즉시 `"접수됨 job_id=..."` 응답
 - 백그라운드에서 `GET /jobs/<job_id>` 폴링
 - `status=succeeded|failed` 되면 결과를 Discord로 회신
+- 직접 연결 스크립트: `scripts/openclaw_http_bridge.py`
 
 ## 보안 권장
 - `BRIDGE_TOKEN`은 긴 랜덤값 사용
