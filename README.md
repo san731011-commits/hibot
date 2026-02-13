@@ -1,11 +1,20 @@
 # band-ai-dashboard
 
-GitHub Issue/PR 기반으로 OpenClaw 요청을 처리하기 위한 최소 운영 저장소입니다.
+OpenClaw/Discord 요청을 Codex로 처리하기 위한 운영 저장소입니다.
 
 ## 목표
-- 메신저 요청을 이슈로 표준화
-- Codex 작업을 PR로 검토 가능하게 관리
-- 결과를 다시 메신저로 전달할 때 근거 링크(이슈/PR) 확보
+- Discord 요청을 원격으로 빠르게 처리
+- Codex 실행 결과를 안전하게 전달
+- 필요 시 GitHub 이슈/PR 흐름도 함께 지원
+
+## 권장 운영 방식 (현재)
+1. OpenClaw가 `POST /jobs` 호출 (즉시 `job_id` 수신)
+2. OpenClaw가 `GET /jobs/<job_id>`로 상태 조회
+3. 완료 시 Discord에 결과 요약 전송
+
+관련 문서:
+- `docs/http-bridge.md`
+- `docs/windows-http-bridge-task.md`
 
 ## 기본 흐름
 1. OpenClaw/Discord 요청을 `Task Request` 이슈로 등록
@@ -49,9 +58,13 @@ export GITHUB_TOKEN="<fine-grained-pat>"
 1. 워커 자동 처리: `scripts/github_task_worker.py`
 2. Windows 시작 자동실행: `scripts/install_worker_task.ps1`
 3. Discord/OpenClaw 명령 브리지: `scripts/openclaw_github_bridge.py`
+4. HTTP Codex 브리지: `scripts/codex_http_bridge.py`
+5. HTTP 브리지 자동실행: `scripts/install_http_bridge_task.ps1`
 
 문서:
 - `docs/worker-automation.md`
 - `docs/windows-task-scheduler.md`
 - `docs/discord-commands.md`
 - `docs/openclaw-github-bridge.md`
+- `docs/http-bridge.md`
+- `docs/windows-http-bridge-task.md`
