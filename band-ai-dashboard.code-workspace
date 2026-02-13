@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.autoSave": "afterDelay",
+    "git.autorefresh": true,
+    "explorer.confirmDelete": false
+  }
+}

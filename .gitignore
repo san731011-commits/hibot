@@ -1,0 +1,7 @@
+# Local binaries / archives
+code
+vscode_cli.tar.gz
+
+# OS / editor
+.DS_Store
+Thumbs.db
