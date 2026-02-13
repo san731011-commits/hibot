@@ -32,3 +32,15 @@ git push -u origin task/1-initial-setup
 ```
 
 4. GitHub에서 PR 생성 후 템플릿 체크
+
+## 토큰으로 이슈 자동 생성
+`GITHUB_TOKEN`이 설정되어 있으면 스크립트로 작업 이슈를 만들 수 있습니다.
+
+```bash
+export GITHUB_TOKEN="<fine-grained-pat>"
+./scripts/create_task_issue.sh "로그인 에러 문구 수정" "로그인 실패 메시지를 한국어로 통일"
+```
+
+선택 환경변수:
+- `GITHUB_OWNER` (기본값: `san731011-commits`)
+- `GITHUB_REPO` (기본값: `band-ai-dashboard`)
