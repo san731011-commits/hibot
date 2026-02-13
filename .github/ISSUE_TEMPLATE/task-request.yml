@@ -1,0 +1,74 @@
+name: Task Request
+description: OpenClaw/Discord에서 들어온 작업 요청 등록
+title: "[Task] "
+labels:
+  - task
+body:
+  - type: input
+    id: requester
+    attributes:
+      label: 요청자
+      description: 요청한 사람 또는 채널
+      placeholder: "예: sani / discord#dev-channel"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source
+    attributes:
+      label: 요청 출처
+      options:
+        - Discord
+        - OpenClaw
+        - Direct
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: 작업 목표
+      description: 무엇을 만들거나 고쳐야 하는지
+      placeholder: "예: 로그인 실패 시 에러 문구를 한국어로 표시"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 기준
+      description: 이 조건이 충족되면 완료로 간주
+      placeholder: |
+        - [ ] 조건 1
+        - [ ] 조건 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: 제약사항
+      description: 기술/시간/보안 등 제한 조건
+      placeholder: "예: 외부 패키지 추가 금지, 오늘 18:00 전"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options:
+        - P0 - 긴급
+        - P1 - 높음
+        - P2 - 보통
+        - P3 - 낮음
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 참고 링크/대화 원문
+      placeholder: "관련 대화 링크, 스크린샷, 문서"
+    validations:
+      required: false
