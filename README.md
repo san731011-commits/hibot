@@ -44,3 +44,14 @@ export GITHUB_TOKEN="<fine-grained-pat>"
 선택 환경변수:
 - `GITHUB_OWNER` (기본값: `san731011-commits`)
 - `GITHUB_REPO` (기본값: `band-ai-dashboard`)
+
+## 자동 운영 세트
+1. 워커 자동 처리: `scripts/github_task_worker.py`
+2. Windows 시작 자동실행: `scripts/install_worker_task.ps1`
+3. Discord/OpenClaw 명령 브리지: `scripts/openclaw_github_bridge.py`
+
+문서:
+- `docs/worker-automation.md`
+- `docs/windows-task-scheduler.md`
+- `docs/discord-commands.md`
+- `docs/openclaw-github-bridge.md`
