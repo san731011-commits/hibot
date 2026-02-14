@@ -1,0 +1,44 @@
+# Rate Limiter Configuration - HIGH SPEED MODE
+# Target: 2.7M TPM (41% increase)
+
+rateLimiter:
+  enabled: true
+  
+  # 속도 최적화 (기존의 2배)
+  debounceMs: 50              # 100 → 50ms
+  
+  responseDelay:
+    min: 30                   # 50 → 30ms
+    max: 100                  # 150 → 100ms
+  
+  # 대기열 확장
+  queue:
+    maxSize: 20               # 10 → 20
+    dropWhenFull: false       # 새 것 버림 → 오래된 것 버림
+    priorityBoost: true       # 우선순위 큐 활성화
+  
+  # TPM 상향 (270만 목표)
+  tokenLimit:
+    enabled: true
+    maxTokensPerMinute: 2700000    # 190만 → 270만 (42% 증가)
+    burstAllowance: 100000         # 버스트 10만 토큰
+    cooldownSeconds: 20            # 30 → 20초
+    checkIntervalSeconds: 30       # 60 → 30초 (더 자주 체크)
+    
+  # 캐싱 강화
+  cache:
+    enabled: true
+    ttlSeconds: 300                # 5분 캐싱
+    maxSize: 2000                  # 2000개 캐시
+    similarityThreshold: 0.90      # 90% 유사도면 재사용
+
+# 채널별 고속 모드
+channels:
+  "1470397073923899463":
+    debounceMs: 50
+    responseDelay:
+      min: 30
+      max: 100
+    queue:
+      maxSize: 20
+    priority: high               # 우선순위 높음
